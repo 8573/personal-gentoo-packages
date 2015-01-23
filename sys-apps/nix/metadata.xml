@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <upstream>
+	<bugs-to>https://github.com/NixOS/nix/issues</bugs-to>
+	<changelog>https://nixos.org/nix/manual/#sec-relnotes</changelog>
+	<doc>https://nixos.org/nix/manual/</doc>
+  </upstream>
+  <maintainer>
+    <email>8573dd@gmail.com</email>
+  </maintainer>
+  <use>
+	<!-- Flag description from
+		 <https://nixos.org/nix/manual/#sec-prerequisites-source>. -->
+    <flag name="gc">Use the Boehm garbage collector to reduce the evaluator’s memory consumption.</flag>
+  </use>
+</pkgmetadata>

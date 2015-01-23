@@ -1,0 +1,19 @@
+#!/sbin/runscript
+
+depend() {
+	need localmount
+	after bootmisc
+}
+
+start() {
+	ebegin 'Starting Nix daemon'
+	start-stop-daemon --exec '/usr/bin/nix-daemon' \
+		--background --make-pidfile --pidfile '/run/nix-daemon.pid'
+	eend $? 'Failed to start Nix daemon'
+}
+
+stop() {
+	ebegin 'Stopping Nix daemon'
+	start-stop-daemon --stop 'nix-daemon' --pidfile '/run/nix-daemon.pid'
+	eend $? 'Failed to stop Nix daemon'
+}
